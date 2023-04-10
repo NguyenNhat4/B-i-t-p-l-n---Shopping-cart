@@ -27,17 +27,6 @@ node* createNodegiohang(Gh g, giocuatoi h){
 	printf("Da luu gio hang!!!\n");
 	return p;
 }
-void themDau(node *p, list *l){
-	if(l->head==NULL){		
-		l->head=p;
-		l->tail=p;
-	}
-	else{
-		p->next=l->head;
-		l->head=p;
-	}
-	l->n++;
-}
 void themCuoi(node *p, list *l){
 	if(l->head==NULL){
 		l->head=p;
@@ -58,17 +47,21 @@ void taogiohang(giocuatoi &h ) {
 	fflush(stdin); 
 	fgets(h.diachi, sizeof(h.diachi), stdin); xoaXuongDong(h.diachi);
 }
-
-void xoaDau(list *l){
-	if(l->head==NULL)
+void xoadanhsachbatky(list *l, int viTri){ 
+	if(viTri < 1 || viTri > l->n){
+        printf("Ban phai nhap thu tu dung voi danh sach");
+        return;
+    }
+    if(viTri == 1){
+      if(l->head==NULL)
 		printf("Danh sach chua co phan tu nao de xoa");
 	else{
 		l->head=l->head->next;
 	}
-}
-
-void xoaCuoi(list *l){
-	if(l->head==NULL)
+        return;
+    }
+    if(viTri == l->n){
+       if(l->head==NULL)
 		printf("Danh sach chua co phan tu nao de xoa");
 	else{
 		node *i=l->head;
@@ -82,19 +75,6 @@ void xoaCuoi(list *l){
 		i->next=NULL;
 		l->n--;
 	}
-}
-
-void xoadanhsachbatky(list *l, int viTri){ 
-	if(viTri < 1 || viTri > l->n){
-        printf("Ban phai nhap thu tu dung voi danh sach");
-        return;
-    }
-    if(viTri == 1){
-        xoaDau(l);
-        return;
-    }
-    if(viTri == l->n){
-        xoaCuoi(l);
         return;
     }
     node *prev = l->head;
@@ -138,7 +118,15 @@ void them1sanphamvaovitribatki(list *l, node *p,int k ) {
         return;
     }
     if(k == 1){
-        themDau(p, l);
+       if(l->head==NULL){		
+		l->head=p;
+		l->tail=p;
+	}
+	else{
+		p->next=l->head;
+		l->head=p;
+	}
+	l->n++;
         return;
     }  
     node *prev = l->head;
