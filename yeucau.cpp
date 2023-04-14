@@ -38,7 +38,7 @@ void themCuoi(node *p, list *l){
 	}
 	l->n++;
 }
-void taogiohang(giocuatoi &h ) {
+void taoGioHang(giocuatoi &h ) {
 	h.sosanpham=0;
 	printf("Nhap ten khach hang: ");
 	fflush(stdin);
@@ -47,7 +47,7 @@ void taogiohang(giocuatoi &h ) {
 	fflush(stdin); 
 	fgets(h.diachi, sizeof(h.diachi), stdin); xoaXuongDong(h.diachi);
 }
-void xoadanhsachbatky(list *l, int viTri){ 
+void xoaDanhSachBatKy(list *l, int viTri){ 
 	if(viTri < 1 || viTri > l->n){
         printf("Ban phai nhap thu tu dung voi danh sach");
         return;
@@ -86,7 +86,7 @@ void xoadanhsachbatky(list *l, int viTri){
     free(tmp);
     l->n--;
 }
- void Timgiatiendanhaphaychua( list *l) {
+ void timGiaTienDaNhapHayChua( list *l) {
  	int q;
  	int z;
  	printf("nhap gia tien ban muon tim xem co hay chua: ");
@@ -100,14 +100,14 @@ void xoadanhsachbatky(list *l, int viTri){
 		}
 	}
  }
-void tinhtongtiencacsp( list *l) {
+void tinhTongTienCacSP( list *l) {
 	int tong=0;
 	for(node *i=l->head;i!=NULL;i=i->next){
 		tong=tong+ i->data.gia;
 	}
 	printf("Tong tien cac san pham da tao: %d\n",tong);
 }
-void them1sanphamvaovitribatki(list *l, node *p,int k ) {
+void them1SanPhamVaoViTriBatKi(list *l, node *p,int k ) {
 	if(k < 1 || k > l->n+1){
         printf("Vi tri them khong hop le");
         return;
@@ -137,7 +137,7 @@ void them1sanphamvaovitribatki(list *l, node *p,int k ) {
     prev->next = p;
     l->n++;
 }
-void tao1file(list *l,int n,giocuatoi h) {
+void tao1File(list *l,int n,giocuatoi h) {
 	int m=1;		
 	FILE *f;
 	f = fopen("cart.dat","wb");
