@@ -88,18 +88,21 @@ void xoadanhsachbatky(list *l, int viTri){
 }
  void Timgiatiendanhaphaychua( list *l) {
  	int q;
- 	int z;
+ 	int k=0;
  	printf("nhap gia tien ban muon tim xem co hay chua: ");
  	scanf("%d",&q);
 	for(node *i=l->head;i!=NULL;i=i->next) {
 		if( q == i->data.gia) {
-			printf("da co so tien la %d\n",q);
-		}
-		else{
-			printf("chua co so tien la %d \n",q);
+			k=1;
 		}
 	}
- }
+		if(k==1){
+			printf("da co so tien!!!\n",q);
+		}
+		else{
+			printf("chua co so tien!!!\n",q);
+		}
+ } 
 void tinhtongtiencacsp( list *l) {
 	int tong=0;
 	for(node *i=l->head;i!=NULL;i=i->next){
