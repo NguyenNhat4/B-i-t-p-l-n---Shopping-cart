@@ -29,11 +29,11 @@ void khoiTaoList(list *l);
 void xoaXuongDong(char x[]);
 node* createNodegiohang(Gh g, giocuatoi h);
 void themCuoi(node *p, list *l);
-void taogiohang(giocuatoi &h );
-void xoadanhsachbatky(list *l, int viTri);
-void Timgiatiendanhaphaychua( list *l);
-void tinhtongtiencacsp( list *l);
-void them1sanphamvaovitribatki(list *l, node *p,int k );
-void tao1file(list *l,int n,giocuatoi h);
+void taoGioHang(giocuatoi &h );
+void xoaDanhSachBatKy(list *l, int viTri);
+void timGiaTienDaNhapHayChua( list *l);
+void tinhTongTienCacSP( list *l);
+void them1SanPhamVaoViTriBatKi(list *l, node *p,int k );
+void tao1File(list *l,int n,giocuatoi h);
 void xuat(list *l);
 
