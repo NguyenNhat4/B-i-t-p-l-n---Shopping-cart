@@ -21,7 +21,7 @@ int main() {
 	printf(" \n Ban chon? ");
 	scanf("%d",&n);
 	switch(n) {
-	case 1: taogiohang(	h1);
+	case 1: taoGioHang(	h1);
 	break;
 	case 2:	
 	p=createNodegiohang(g1,h1);
@@ -33,18 +33,18 @@ int main() {
 	case 4:	
 	printf("Nhap vi tri muon xoa gio hang: ");
 	scanf("%d",&k);
-	xoadanhsachbatky(l,k);
+	xoaDanhSachBatKy(l,k);
 	break;
 	case 5: printf("Nhap vi tri ban muon chen them gio hang: ");
     scanf("%d",&k);
 	p=createNodegiohang(g1,h1);
-	them1sanphamvaovitribatki(l,p,k);
+	them1SanPhamVaoViTriBatKi(l,p,k);
 	break;
-	case 6: tao1file(l,n,h1);
+	case 6: tao1File(l,n,h1);
 	break;
-	case 7: tinhtongtiencacsp(l);
+	case 7: tinhTongTienCacSP(l);
 	break;
-	case 8: Timgiatiendanhaphaychua(l);
+	case 8: timGiaTienDaNhapHayChua(l);
 		break;	
 	      }
 	}while(n!=9);
